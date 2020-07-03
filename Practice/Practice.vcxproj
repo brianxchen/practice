@@ -139,7 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DPLIS.cpp" />
+    <ClCompile Include="GreedyLIS.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Practice.cpp" />
+    <ClCompile Include="RecursiveLIS.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="DPLIS.h" />
+    <ClInclude Include="GreedyLIS.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="RecursiveLIS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
