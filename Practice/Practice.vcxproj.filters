@@ -33,6 +33,15 @@
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VectorTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AgeComparerIncreasing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IComparer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DPLIS.h">
@@ -48,6 +57,15 @@
       <Filter>Source Files\LIS</Filter>
     </ClInclude>
     <ClInclude Include="Person.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorTest.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IComparer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AgeComparerIncreasing.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

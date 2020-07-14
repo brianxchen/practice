@@ -139,18 +139,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AgeComparerIncreasing.cpp" />
     <ClCompile Include="DPLIS.cpp" />
     <ClCompile Include="GreedyLIS.cpp" />
+    <ClCompile Include="IComparer.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Practice.cpp" />
     <ClCompile Include="RecursiveLIS.cpp" />
+    <ClCompile Include="VectorTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AgeComparerIncreasing.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DPLIS.h" />
     <ClInclude Include="GreedyLIS.h" />
+    <ClInclude Include="IComparer.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="RecursiveLIS.h" />
+    <ClInclude Include="VectorTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
