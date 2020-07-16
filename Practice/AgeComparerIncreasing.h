@@ -1,16 +1,10 @@
 #pragma once
 #include "Person.h"
-#include "IComparer.h"
+#include "AbstractComparer.h"
 
 
-class AgeComparerIncreasing : public IComparer {
+class AgeComparerIncreasing : public AbstractComparer {
 	public:
-		AgeComparerIncreasing() {
-
-		}
-		bool Compare(Person a, Person b) override {
-				cout << "Inside agecomparerincreasing";
-				return a.age < b.age;
-		}
+		bool Compare(Person a, Person b);
 };
 

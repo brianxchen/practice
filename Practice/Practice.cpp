@@ -2,13 +2,11 @@
 //
 
 #include <iostream>
-#include "DPLIS.h"
-#include "RecursiveLIS.h"
-#include "GreedyLIS.h"
 #include "Person.h"
 #include "VectorTest.h"
-#include "IComparer.h"
+#include "AbstractComparer.h"
 #include "AgeComparerIncreasing.h"
+#include "HumanTower.h"
 
 using namespace std;
 
@@ -61,7 +59,7 @@ void BubbleSortWithCompareFunc(vector<Person>& people, compareFunc compare) {
     }
 }
 
-void BubbleSortWithCompareObject(vector<Person>& people, IComparer comparer) {
+void BubbleSortWithCompareObject(vector<Person>& people, AbstractComparer& comparer) {
     int len = people.size();
     for (int top = len - 1; top > 0; top--) {
         for (int curr = 0; curr < top; curr++) {
@@ -118,11 +116,14 @@ void printArr(vector<int> nums) {
 
 int main()
 {
+
     vector<Person> people;
     people.push_back(Person(1, "Ad", true));
     people.push_back(Person(2, "Badfs", true));
     people.push_back(Person(3, "C", true));
     people.push_back(Person(4, "Ddgsdgsg", true));
+
+    TestHumanTower();
 
     //BubbleSortWithCompareFunc(people, compareByNameLengthIncreasing);
     

@@ -16,6 +16,15 @@
     <Filter Include="Source Files\LIS">
       <UniqueIdentifier>{eeca0619-746d-41ff-819d-476b7e4a6593}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Comparer">
+      <UniqueIdentifier>{6dd3a49a-5278-4470-b85b-febc6e148cb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Matrix">
+      <UniqueIdentifier>{8e4841a0-31cd-4453-b552-747b2de8f7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Person">
+      <UniqueIdentifier>{4af35085-a381-4120-81fd-655120c1f117}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Practice.cpp">
@@ -30,17 +39,20 @@
     <ClCompile Include="RecursiveLIS.cpp">
       <Filter>Source Files\LIS</Filter>
     </ClCompile>
-    <ClCompile Include="Person.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AgeComparerIncreasing.cpp">
+      <Filter>Source Files\Comparer</Filter>
     </ClCompile>
     <ClCompile Include="VectorTest.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="AgeComparerIncreasing.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Person.cpp">
+      <Filter>Source Files\Person</Filter>
     </ClCompile>
-    <ClCompile Include="IComparer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="HumanTower.cpp">
+      <Filter>Source Files\LIS</Filter>
+    </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Source Files\LIS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,17 +68,23 @@
     <ClInclude Include="Common.h">
       <Filter>Source Files\LIS</Filter>
     </ClInclude>
-    <ClInclude Include="Person.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="AgeComparerIncreasing.h">
+      <Filter>Source Files\Comparer</Filter>
     </ClInclude>
     <ClInclude Include="VectorTest.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="IComparer.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Person.h">
+      <Filter>Source Files\Person</Filter>
     </ClInclude>
-    <ClInclude Include="AgeComparerIncreasing.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="AbstractComparer.h">
+      <Filter>Source Files\Comparer</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanTower.h">
+      <Filter>Source Files\LIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Source Files\LIS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
