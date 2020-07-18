@@ -1,5 +1,5 @@
 #pragma once
-#include "Common.h"
+#include "..\Common.h"
 
 
 int LIS(int* a, int length);

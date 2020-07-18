@@ -16,8 +16,13 @@ void Person::Print() {
 	cout << ToString();
 }
 
-string Person::ToString() {
+string Person::ToString() const {
 	return "Age = " + to_string(this->age) + ", name = " + this->name + ", isMale = " + to_string(this->isMale);
+}
+
+void Person::IncreaseAge()
+{
+	this->age++;
 }
 
 void TestPerson() {

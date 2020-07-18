@@ -1,4 +1,4 @@
-#include "Common.h"
+#include "VectorTest.h"
 
 bool DecreasingCompare(int a, int b) {
 	return b < a;

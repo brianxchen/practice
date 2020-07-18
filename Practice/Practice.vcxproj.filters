@@ -30,61 +30,73 @@
     <ClCompile Include="Practice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DPLIS.cpp">
+    <ClCompile Include="HumanTower\HumanTower.cpp">
       <Filter>Source Files\LIS</Filter>
     </ClCompile>
-    <ClCompile Include="GreedyLIS.cpp">
+    <ClCompile Include="LIS\DPLIS.cpp">
       <Filter>Source Files\LIS</Filter>
     </ClCompile>
-    <ClCompile Include="RecursiveLIS.cpp">
+    <ClCompile Include="LIS\GreedyLIS.cpp">
       <Filter>Source Files\LIS</Filter>
     </ClCompile>
-    <ClCompile Include="AgeComparerIncreasing.cpp">
-      <Filter>Source Files\Comparer</Filter>
+    <ClCompile Include="LIS\RecursiveLIS.cpp">
+      <Filter>Source Files\LIS</Filter>
     </ClCompile>
-    <ClCompile Include="VectorTest.cpp">
+    <ClCompile Include="Matrix\VectorTest.cpp">
       <Filter>Source Files\Matrix</Filter>
     </ClCompile>
-    <ClCompile Include="Person.cpp">
+    <ClCompile Include="BubbleSort\AgeComparerIncreasing.cpp">
+      <Filter>Source Files\Comparer</Filter>
+    </ClCompile>
+    <ClCompile Include="Person\Person.cpp">
       <Filter>Source Files\Person</Filter>
     </ClCompile>
-    <ClCompile Include="HumanTower.cpp">
+    <ClCompile Include="HumanTower\Human.cpp">
       <Filter>Source Files\LIS</Filter>
     </ClCompile>
-    <ClCompile Include="Human.cpp">
-      <Filter>Source Files\LIS</Filter>
+    <ClCompile Include="BubbleSort\TestBubbleSort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Recursion\Hanoi.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DPLIS.h">
-      <Filter>Source Files\LIS</Filter>
-    </ClInclude>
-    <ClInclude Include="GreedyLIS.h">
-      <Filter>Source Files\LIS</Filter>
-    </ClInclude>
-    <ClInclude Include="RecursiveLIS.h">
-      <Filter>Source Files\LIS</Filter>
-    </ClInclude>
     <ClInclude Include="Common.h">
       <Filter>Source Files\LIS</Filter>
     </ClInclude>
-    <ClInclude Include="AgeComparerIncreasing.h">
-      <Filter>Source Files\Comparer</Filter>
+    <ClInclude Include="HumanTower\HumanTower.h">
+      <Filter>Source Files\LIS</Filter>
     </ClInclude>
-    <ClInclude Include="VectorTest.h">
+    <ClInclude Include="LIS\DPLIS.h">
+      <Filter>Source Files\LIS</Filter>
+    </ClInclude>
+    <ClInclude Include="LIS\GreedyLIS.h">
+      <Filter>Source Files\LIS</Filter>
+    </ClInclude>
+    <ClInclude Include="LIS\RecursiveLIS.h">
+      <Filter>Source Files\LIS</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix\VectorTest.h">
       <Filter>Source Files\Matrix</Filter>
     </ClInclude>
-    <ClInclude Include="Person.h">
-      <Filter>Source Files\Person</Filter>
-    </ClInclude>
-    <ClInclude Include="AbstractComparer.h">
+    <ClInclude Include="BubbleSort\AgeComparerIncreasing.h">
       <Filter>Source Files\Comparer</Filter>
     </ClInclude>
-    <ClInclude Include="HumanTower.h">
+    <ClInclude Include="BubbleSort\AbstractComparer.h">
+      <Filter>Source Files\Comparer</Filter>
+    </ClInclude>
+    <ClInclude Include="Person\Person.h">
+      <Filter>Source Files\Person</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanTower\Human.h">
       <Filter>Source Files\LIS</Filter>
     </ClInclude>
-    <ClInclude Include="Human.h">
-      <Filter>Source Files\LIS</Filter>
+    <ClInclude Include="BubbleSort\TestBubbleSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Recursion\Hanoi.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

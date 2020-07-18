@@ -139,27 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AgeComparerIncreasing.cpp" />
-    <ClCompile Include="DPLIS.cpp" />
-    <ClCompile Include="GreedyLIS.cpp" />
-    <ClCompile Include="Human.cpp" />
-    <ClCompile Include="HumanTower.cpp" />
-    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="BubbleSort\AgeComparerIncreasing.cpp" />
+    <ClCompile Include="BubbleSort\TestBubbleSort.cpp" />
+    <ClCompile Include="LIS\DPLIS.cpp" />
+    <ClCompile Include="LIS\GreedyLIS.cpp" />
+    <ClCompile Include="HumanTower\Human.cpp" />
+    <ClCompile Include="HumanTower\HumanTower.cpp" />
+    <ClCompile Include="Person\Person.cpp" />
     <ClCompile Include="Practice.cpp" />
-    <ClCompile Include="RecursiveLIS.cpp" />
-    <ClCompile Include="VectorTest.cpp" />
+    <ClCompile Include="LIS\RecursiveLIS.cpp" />
+    <ClCompile Include="Matrix\VectorTest.cpp" />
+    <ClCompile Include="Recursion\Hanoi.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AgeComparerIncreasing.h" />
+    <ClInclude Include="BubbleSort\AgeComparerIncreasing.h" />
+    <ClInclude Include="BubbleSort\TestBubbleSort.h" />
     <ClInclude Include="Common.h" />
-    <ClInclude Include="DPLIS.h" />
-    <ClInclude Include="GreedyLIS.h" />
-    <ClInclude Include="AbstractComparer.h" />
-    <ClInclude Include="Human.h" />
-    <ClInclude Include="HumanTower.h" />
-    <ClInclude Include="Person.h" />
-    <ClInclude Include="RecursiveLIS.h" />
-    <ClInclude Include="VectorTest.h" />
+    <ClInclude Include="LIS\DPLIS.h" />
+    <ClInclude Include="LIS\GreedyLIS.h" />
+    <ClInclude Include="BubbleSort\AbstractComparer.h" />
+    <ClInclude Include="HumanTower\Human.h" />
+    <ClInclude Include="HumanTower\HumanTower.h" />
+    <ClInclude Include="Person\Person.h" />
+    <ClInclude Include="LIS\RecursiveLIS.h" />
+    <ClInclude Include="Matrix\VectorTest.h" />
+    <ClInclude Include="Recursion\Hanoi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
