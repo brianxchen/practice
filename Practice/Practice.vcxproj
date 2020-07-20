@@ -139,8 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bridge\BuildBridge.cpp" />
     <ClCompile Include="BubbleSort\AgeComparerIncreasing.cpp" />
     <ClCompile Include="BubbleSort\TestBubbleSort.cpp" />
+    <ClCompile Include="Knapsack\Knapsack.cpp" />
+    <ClCompile Include="Knapsack\KnapsackItem.cpp" />
     <ClCompile Include="LIS\DPLIS.cpp" />
     <ClCompile Include="LIS\GreedyLIS.cpp" />
     <ClCompile Include="HumanTower\Human.cpp" />
@@ -149,12 +152,17 @@
     <ClCompile Include="Practice.cpp" />
     <ClCompile Include="LIS\RecursiveLIS.cpp" />
     <ClCompile Include="Matrix\VectorTest.cpp" />
+    <ClCompile Include="Bridge\City.cpp" />
     <ClCompile Include="Recursion\Hanoi.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bridge\BuildBridge.h" />
+    <ClInclude Include="Bridge\City.h" />
     <ClInclude Include="BubbleSort\AgeComparerIncreasing.h" />
     <ClInclude Include="BubbleSort\TestBubbleSort.h" />
     <ClInclude Include="Common.h" />
+    <ClInclude Include="Knapsack\Knapsack.h" />
+    <ClInclude Include="Knapsack\KnapsackItem.h" />
     <ClInclude Include="LIS\DPLIS.h" />
     <ClInclude Include="LIS\GreedyLIS.h" />
     <ClInclude Include="BubbleSort\AbstractComparer.h" />

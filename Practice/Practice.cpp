@@ -8,7 +8,8 @@
 #include "HumanTower\HumanTower.h"
 #include "LIS\RecursiveLIS.h"
 #include "Recursion\Hanoi.h"
-
+#include "Bridge\BuildBridge.h"
+#include "Knapsack\Knapsack.h"
 
 
 using namespace std;
@@ -58,34 +59,5 @@ void printArr(vector<int> nums) {
 
 int main()
 {
-    
-    TestBubbleSort();
-
-    int nums[] = { 1, 2, 3, 4 };
-    cout << RecursiveLIS(nums, 4);
-    //cout << GreedyLIS(nums, 4);
-    MatrixMultiplication();
-
-    //TestSorter();
-
-    //TestVector();
-
-    /*
-    
-    int a = 1;
-    int b = 2;
-
-    cout << "a = " << a << " b = " << b;
-
-    swap(a, b);
-    cout << "\na = " << a << " b = " << b;
-
-    //swapPassByPointer(&a, &b);
-
-    int nums[] = {1, 2, 5, 3, 4};
-
-    //TestDestructors();
-
-    
-    */
+    TestKnapsack();
 }

@@ -32,11 +32,16 @@ void printPeople(const vector<Person>& people) {
 void BubbleSortWithCompareFunc(vector<Person>& people, compareFunc compare) {
     int len = people.size();
     for (int top = len - 1; top > 0; top--) {
+        bool swapped = false;
         for (int curr = 0; curr < top; curr++) {
             cout << "comparing " << curr << " with " << curr + 1 << "\n";
             if (compare(people[curr], people[curr + 1])) {
                 swapPeopleByReference(people[curr], people[curr + 1]);
+                swapped = true;
             }
+        }
+        if (!swapped) {
+            break;
         }
     }
 }
