@@ -5,6 +5,7 @@ int Knapsack(vector<KnapsackItem> items, int capacity) {
 	int len = items.size();
 	
 	vector<int> f (capacity + 1); // solution array needs to store up to f[capacity]
+
 	f[0] = 0;
 
 	for (int i = 1; i <= capacity; i++) {

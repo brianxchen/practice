@@ -144,6 +144,8 @@
     <ClCompile Include="BubbleSort\TestBubbleSort.cpp" />
     <ClCompile Include="Knapsack\Knapsack.cpp" />
     <ClCompile Include="Knapsack\KnapsackItem.cpp" />
+    <ClCompile Include="Leetcode\Archive.cpp" />
+    <ClCompile Include="Leetcode\Leetcode.cpp" />
     <ClCompile Include="LIS\DPLIS.cpp" />
     <ClCompile Include="LIS\GreedyLIS.cpp" />
     <ClCompile Include="HumanTower\Human.cpp" />
@@ -163,6 +165,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="Knapsack\Knapsack.h" />
     <ClInclude Include="Knapsack\KnapsackItem.h" />
+    <ClInclude Include="Leetcode\Leetcode.h" />
     <ClInclude Include="LIS\DPLIS.h" />
     <ClInclude Include="LIS\GreedyLIS.h" />
     <ClInclude Include="BubbleSort\AbstractComparer.h" />
