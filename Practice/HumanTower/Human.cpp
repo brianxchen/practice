@@ -7,5 +7,5 @@ Human::Human(int height, int weight, string name) {
 }
 
 string Human::ToString() {
-	return "[" + name + "," + std::to_string(height) + "," + std::to_string(weight) + "]";
+	return "[" + name + "," + to_string(height) + "," + to_string(weight) + "]";
 }
