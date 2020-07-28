@@ -4,7 +4,195 @@
 
 #include "Leetcode.h"
 
+#define List vector
+#define Add push_back
 
+
+
+vector<vector<int>> Create2DArray(int a, int b) {
+    vector<vector<int>> TwoD = vector<vector<int>>();
+    for (int i = 0; i < a; i++) {
+        vector<int> row = vector<int>();
+        for (int j = 0; j < b; j++) {
+            row.push_back(0);
+        }
+        TwoD.push_back(row);
+    }
+    return TwoD;
+}
+vector<vector<Position>> Create2DPositionArray(int a, int b) {
+    vector<vector<Position>> TwoD = vector<vector<Position>>();
+    for (int i = 0; i < a; i++) {
+        vector<Position> row = vector<Position>();
+        for (int j = 0; j < b; j++) {
+            row.push_back(Position(0, 0));
+        }
+        TwoD.push_back(row);
+    }
+    return TwoD;
+}
+
+int GetElement(vector<vector<int>> f, int i, int j) {
+    if (i < 0 || j < 0) {
+        return 0;
+    }
+    return f[i][j];
+
+}
+
+int GetRowElement(List<int> row, int j) {
+    if (j < 0) {
+        return 0;
+    }
+    return row[j];
+}
+int LCSNo2DInitialize(string a, string b) {
+    int m = a.length();
+    int n = b.length();
+
+    List<List<int>> f;
+
+    for (int i = 0; i < m; i++) {
+        List<int> row;
+        for (int j = 0; j < n; j++) {
+            int cell;
+            if (a[i] == b[j]) {
+                cell = GetElement(f, i - 1, j - 1) + 1;
+            }
+            else {
+                if (GetElement(f, i - 1, j) >= GetRowElement(row, j - 1)) {
+                    cell = GetElement(f, i - 1, j);
+                }
+                else {
+                    cell = GetRowElement(row, j - 1);
+                }
+            }
+            row.Add(cell);
+        }
+        f.Add(row);
+    }
+
+    printf("%d\n", f[m - 1][n - 1]);
+
+    return f[m - 1][n - 1];
+}
+int LongestCommonSubsequence(string a, string b) {
+    int m = a.length();
+    int n = b.length();
+
+    vector<vector<int>> f = Create2DArray(m, n);
+
+    vector<vector<Position>> backtrack = Create2DPositionArray(m, n);
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (a[i] == b[j]) {
+                f[i][j] = GetElement(f, i - 1, j - 1) + 1;
+                backtrack[i][j] = Position(i - 1, j - 1);
+            }
+            else {
+                if (GetElement(f, i - 1, j) >= GetElement(f, i, j - 1)) {
+                    f[i][j] = GetElement(f, i - 1, j);
+                    backtrack[i][j] = Position(i - 1, j);
+                }
+                else {
+                    f[i][j] = GetElement(f, i, j - 1);
+                    backtrack[i][j] = Position(i, j - 1);
+                }
+            }
+#ifdef _DEBUG
+            printf("[%d, %d] -> [%d, %d]\n", i, j, backtrack[i][j].i, backtrack[i][j].j);
+#endif
+        }
+        //    cout << LongestCommonSubstring("abcdefgxyz", "mmmabcdefgnnnxyzppp") << endl;
+        //    cout << LongestCommonSubsequence("1a23b45c6d", "a7bc8d9") << endl;
+    }
+
+
+    string answer;
+    Position curr = Position(m - 1, n - 1);
+    while (curr.i >= 0 && curr.j >= 0) {
+        if (a[curr.i] == b[curr.j]) {
+            answer = a[curr.i] + answer;
+        }
+        curr = backtrack[curr.i][curr.j];
+    }
+
+    printf("%d: %s\n", f[m - 1][n - 1], answer.c_str());
+
+    return f[m - 1][n - 1];
+}
+
+void foo() {
+    cout << "foo";
+}
+
+int LongestCommonSubstring(string a, string b) {
+    int m = a.length();
+    int n = b.length();
+
+    int overallMax = 0;
+
+    vector<vector<int>> f = Create2DArray(m, n);
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (a[i] == b[j]) {
+                f[i][j] = GetElement(f, i - 1, j - 1) + 1;
+                overallMax = max(f[i][j], overallMax);
+            }
+            else {
+                f[i][j] = 0;
+            }
+        }
+    }
+    return overallMax;
+
+}
+
+int StringLength(char* pChar) {
+    int length = 0;
+    while (*pChar != 0) {
+        pChar++;
+        length++;
+    }
+    return length;
+}
+
+void TestString() {
+    char* str = new char[8];
+    memset(str, 0, 8);
+    str[0] = 'a';
+    *(str + 1) = 'b';
+    *(str + 2) = 'c';
+    *(str + 3) = '\0';
+    printf("%s\n", str);
+    cout << StringLength(str);
+}
+
+int part(vector<int>& nums, int low, int high) {
+    int pivot = nums[high];
+
+    int i = low - 1;
+
+    for (int j = low; j <= high - 1; j++) {
+        if (nums[j] < pivot) {
+            i++;
+            swap(nums[i], nums[j]);
+        }
+    }
+
+    swap(nums[i], nums[high]);
+    return i + 1;
+}
+
+void quicksort(vector<int>& nums, int low, int high) {
+    if (low < high) {
+        int p = part(nums, low, high);
+        quicksort(nums, low, p - 1);
+        quicksort(nums, p + 1, high);
+    }
+}
 
 int singleNumber(vector<int>& nums) {
     int a = 0;
