@@ -53,23 +53,25 @@ int LCSNo2DInitialize(string a, string b) {
     List<List<int>> f;
 
     for (int i = 0; i < m; i++) {
+        
         List<int> row;
+        f.Add(row);
+
         for (int j = 0; j < n; j++) {
             int cell;
             if (a[i] == b[j]) {
                 cell = GetElement(f, i - 1, j - 1) + 1;
             }
             else {
-                if (GetElement(f, i - 1, j) >= GetRowElement(row, j - 1)) {
+                if (GetElement(f, i - 1, j) >= GetElement(f, i, j - 1)) {
                     cell = GetElement(f, i - 1, j);
                 }
                 else {
-                    cell = GetRowElement(row, j - 1);
+                    cell = GetElement(f, i, j - 1);
                 }
             }
             row.Add(cell);
         }
-        f.Add(row);
     }
 
     printf("%d\n", f[m - 1][n - 1]);

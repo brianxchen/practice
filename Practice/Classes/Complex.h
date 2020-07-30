@@ -28,3 +28,18 @@ class Complex {
 			return res;
 		}
 };
+
+/*
+	Complex a(2.0, 5.0);
+	Complex b(-1.0, 3.0);
+	Complex c(2.0, 5.0);
+	Complex d(-1.0, 3.0);
+	cout << a.ToString();
+	a.add(b);
+	cout << a.ToString() << endl;
+
+
+	Complex e = c + d;
+	cout << e.ToString();
+
+*/

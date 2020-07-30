@@ -1,24 +1,7 @@
 #include <iostream>
 #include "Leetcode\Leetcode.h"
 #include "Common.h"
-#include "Complex.h"
-#include "MyString.h"
 
-
-void swapPassByPointer(int* x, int* y)
-{
-    int z = *x;
-    *x = *y;
-    *y = z;
-}
-
-
-void swapPassByReference(int& x, int& y)
-{
-    int z = x;
-    x = y;
-    y = z;
-}
 
 void printArr(vector<int> nums) {
     for (auto x : nums) cout << x << "\n";
