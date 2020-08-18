@@ -158,6 +158,7 @@
     <ClCompile Include="Recursion\Hanoi.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractMemorizer.h" />
     <ClInclude Include="Bridge\BuildBridge.h" />
     <ClInclude Include="Bridge\City.h" />
     <ClInclude Include="BubbleSort\AgeComparerIncreasing.h" />

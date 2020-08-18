@@ -22,13 +22,43 @@ int Knapsack(vector<KnapsackItem> items, int capacity) {
 	return f[capacity];
 }
 
+int KnapsackGetElement(vector<vector<int>> f, int i, int j) {
+	if (j < 0) {
+		cout << "j < 0";
+		exit(1);
+	}
+	if (i < 0) {
+		return 0;
+	}
+	return f[i][j];
+}
+
+int Knapsack01(vector<KnapsackItem> items, int capacity) {
+	int len = items.size();
+
+	vector<vector<int>> f;
+
+	for (int i = 0; i < len; i++) {
+		f.push_back(vector<int>());
+		for (int j = 0; j <= capacity; j++) {
+			int cell = KnapsackGetElement(f, i-1, j);
+			if (j - items[i].size >= 0) {
+				cell = max(cell,
+					KnapsackGetElement(f, i-1, j - items[i].size) + items[i].value);
+			}
+			f[i].push_back(cell);
+		}
+	}
+
+	return f[len - 1][capacity];
+}
+
 void TestKnapsack() {
 	vector<KnapsackItem> items;
-	items.push_back(KnapsackItem(10, 50, "a"));
-	items.push_back(KnapsackItem(5, 7, "a"));
-	items.push_back(KnapsackItem(100, 2, "a"));
-	items.push_back(KnapsackItem(1, 8, "a"));
-	cout << Knapsack(items, 15);
+	items.push_back(KnapsackItem(10, 60, "a"));
+	items.push_back(KnapsackItem(20, 100, "a"));
+	items.push_back(KnapsackItem(30, 120, "a"));
+	cout << Knapsack01(items, 50);
 
 }
 
