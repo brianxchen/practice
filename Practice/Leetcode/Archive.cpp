@@ -4,8 +4,10 @@
 
 #include "Leetcode.h"
 
-#define List vector
-#define Add push_back
+
+void printArr(vector<int> nums) {
+    for (auto x : nums) cout << x << "\n";
+}
 
 
 
@@ -32,6 +34,13 @@ vector<vector<Position>> Create2DPositionArray(int a, int b) {
     return TwoD;
 }
 
+int GetRowElement(vector<int> row, int j) {
+    if (j < 0) {
+        return 0;
+    }
+    return row[j];
+}
+
 int GetElement(vector<vector<int>> f, int i, int j) {
     if (i < 0 || j < 0) {
         return 0;
@@ -40,42 +49,6 @@ int GetElement(vector<vector<int>> f, int i, int j) {
 
 }
 
-int GetRowElement(List<int> row, int j) {
-    if (j < 0) {
-        return 0;
-    }
-    return row[j];
-}
-int LCSNo2DInitialize(string a, string b) {
-    int m = a.length();
-    int n = b.length();
-
-    List<List<int>> f;
-
-    for (int i = 0; i < m; i++) {
-        List<int> row;
-        for (int j = 0; j < n; j++) {
-            int cell;
-            if (a[i] == b[j]) {
-                cell = GetElement(f, i - 1, j - 1) + 1;
-            }
-            else {
-                if (GetElement(f, i - 1, j) >= GetRowElement(row, j - 1)) {
-                    cell = GetElement(f, i - 1, j);
-                }
-                else {
-                    cell = GetRowElement(row, j - 1);
-                }
-            }
-            row.Add(cell);
-        }
-        f.Add(row);
-    }
-
-    printf("%d\n", f[m - 1][n - 1]);
-
-    return f[m - 1][n - 1];
-}
 int LongestCommonSubsequence(string a, string b) {
     int m = a.length();
     int n = b.length();
@@ -149,6 +122,43 @@ int LongestCommonSubstring(string a, string b) {
     return overallMax;
 
 }
+
+
+
+int LCSNo2DInitialize(string a, string b) {
+    int m = a.length();
+    int n = b.length();
+
+    vector<vector<int>> f;
+
+    for (int i = 0; i < m; i++) {
+
+        f.push_back(vector<int>());
+
+        for (int j = 0; j < n; j++) {
+            int cell;
+            if (a[i] == b[j]) {
+                cell = GetElement(f, i - 1, j - 1) + 1;
+            }
+            else {
+                if (GetElement(f, i - 1, j) >= GetElement(f, i, j - 1)) {
+                    cell = GetElement(f, i - 1, j);
+                }
+                else {
+                    cell = GetElement(f, i, j - 1);
+                }
+            }
+            f[i].push_back(cell);
+            printf("add [%d, %d]\n", i, j);
+        }
+    }
+
+    printf("%d\n", f[m - 1][n - 1]);
+
+    return f[m - 1][n - 1];
+}
+
+
 
 int StringLength(char* pChar) {
     int length = 0;
