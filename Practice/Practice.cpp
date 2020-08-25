@@ -2,7 +2,8 @@
 //#include "Leetcode\Leetcode.h"
 #include "Common.h"
 #include "Context.h"
-#include "Search/KnightTour.h"
+#include "Search/EightQueens.h"
+#include "Search/Sudoku.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
 */
@@ -97,5 +98,5 @@ int main()
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
 
    //TestSearch();
-    TestKnightTour();
+    SudokuSolver();
 }
