@@ -2,7 +2,7 @@
 #include <iostream> 
 #include <queue> 
 
-using namespace std; hlkjhjh
+using namespace std; 
 
 void showq(queue <int> gq)
 {

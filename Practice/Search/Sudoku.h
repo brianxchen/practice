@@ -1,7 +1,8 @@
 #pragma once
 #include "../Common.h"
 
-int board[9][9] = { 
+int board[9][9];
+/*= { 
 	{5, 3, 0, 0, 7, 0, 0, 0, 0},
 	{6, 0, 0, 1, 9, 5, 0, 0, 0},
 	{0, 9, 8, 0, 0, 0, 0, 6, 0},
@@ -12,11 +13,11 @@ int board[9][9] = {
 	{0, 0, 0, 4, 1, 9, 0, 0, 5},
 	{0, 0, 0, 0, 8, 0, 0, 7, 9}
 };
-
+*/
 bool rows[9][10] = { false };
 bool cols[9][10] = { false };
 bool boxes[3][3][10] = { false };
-
+bool done = false;
 
 
 void PrintSudoku() {
@@ -30,23 +31,12 @@ void PrintSudoku() {
 }
 
 bool isValid(int row, int col, int i) {
-	if (rows[row][i] == true) {
-		return false;
-	}
-	if (cols[col][i] == true) {
-		return false;
-	}
-	if (boxes[row / 3][col / 3][i] == true) {
-		return false;
-	}
-	return true;
+	return !(rows[row][i] || cols[col][i] || boxes[row / 3][col / 3][i]);
 }
 
 void PlaceNumber(int cellID) {
-	if (cellID < 4) {
-		PrintSudoku();
-	}
 	if(cellID == 81){
+		done = true;
 		PrintSudoku();
 		return;
 	}
@@ -63,6 +53,9 @@ void PlaceNumber(int cellID) {
 			boxes[row / 3][col / 3][i] = true;
 			board[row][col] = i;
 			PlaceNumber(cellID + 1);
+			if (done) {
+				return;
+			}
 			board[row][col] = 0;
 			rows[row][i] = false;
 			cols[col][i] = false;
@@ -71,7 +64,37 @@ void PlaceNumber(int cellID) {
 	}
 }
 
-void SudokuSolver() {
+// "C:\Users\Brian\source\repos\Data\Sudoku2.txt"
+//C:\Users\Brian\source\repos\Data\Sudoku2_Solution.txt
+// C:\\Users\\Brian\\source\\repos\\Data\\Sudoku1_Solution.txt
+	// To invoke, use the following line:
+	// Practice.exe C:\Users\Brian\source\repos\Data\Sudoku2.txt C:\Users\Brian\source\repos\Data\Sudoku2_Solution.txt
+	//SudokuSolver(argv[1], argv[2]);
+
+void ReadBoard(char* inputFileName) {
+	fstream inputFile;
+	inputFile.open(inputFileName, ios::in);
+	for (int row = 0; row < 9; row++) {
+		for (int col = 0; col < 9; col++) {
+			inputFile >> board[row][col];
+		}
+	}
+}
+
+void WriteBoard(char* outputFileName) {
+	fstream outputFile;
+	outputFile.open(outputFileName, ios::out);
+	for (int row = 0; row < 9; row++) {
+		for (int col = 0; col < 9; col++) {
+			outputFile << board[row][col] << " ";
+		}
+		outputFile << "\n";
+	}
+}
+
+void SudokuSolver(char* inputFileName, char* outputFileName) {
+	ReadBoard(inputFileName);
+	PrintSudoku();
 	for (int row = 0; row < 9; row++) {
 		for (int col = 0; col < 9; col++) {
 			int value = board[row][col];
@@ -83,4 +106,5 @@ void SudokuSolver() {
 		}
 	}
 	PlaceNumber(0);
+	WriteBoard(outputFileName);
 }

@@ -4,6 +4,8 @@
 #include "Context.h"
 #include "Search/EightQueens.h"
 #include "Search/Sudoku.h"
+#include "Combinatorics/CandyBag.h"
+//#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
 */
@@ -82,12 +84,8 @@ void RecursiveLCSubstring(string a, string b) {
     cout << context.overallMax;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-
-
-
-   // cout << EditDistance("horizon", "horzon");
     vector<int> nums { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
 
     //primitives(); 
@@ -97,6 +95,8 @@ int main()
     //RecursiveLCSubstring("abc", "ab");
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
 
-   //TestSearch();
-    SudokuSolver();
+    //LIS(NULL, 5);
+    TestCandyBag();
+
+
 }

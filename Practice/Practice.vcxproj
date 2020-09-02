@@ -148,6 +148,9 @@
     <ClCompile Include="Leetcode\Leetcode.cpp" />
     <ClCompile Include="LIS\DPLIS.cpp" />
     <ClCompile Include="LIS\GreedyLIS.cpp" />
+	<ClCompile Include="Combinatorics\FencePainting.cpp" />
+	<ClCompile Include="Combinatorics\FamilyPicture.cpp" />
+    <ClCompile Include="Combinatorics\CandyBag.cpp" />
     <ClCompile Include="HumanTower\Human.cpp" />
     <ClCompile Include="HumanTower\HumanTower.cpp" />
     <ClCompile Include="Person\Person.cpp" />
@@ -169,7 +172,10 @@
     <ClInclude Include="Leetcode\Leetcode.h" />
     <ClInclude Include="LIS\DPLIS.h" />
     <ClInclude Include="LIS\GreedyLIS.h" />
-    <ClInclude Include="BubbleSort\AbstractComparer.h" />
+	<ClInclude Include="Combinatorics\FencePainting.h" />
+    <ClInclude Include="Combinatorics\FamilyPicture.h" />
+	  <ClInclude Include="Combinatorics\CandyBag.h" />
+	<ClInclude Include="BubbleSort\AbstractComparer.h" />
     <ClInclude Include="HumanTower\Human.h" />
     <ClInclude Include="HumanTower\HumanTower.h" />
     <ClInclude Include="Person\Person.h" />
