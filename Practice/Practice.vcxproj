@@ -159,6 +159,7 @@
     <ClCompile Include="Matrix\VectorTest.cpp" />
     <ClCompile Include="Bridge\City.cpp" />
     <ClCompile Include="Recursion\Hanoi.cpp" />
+    <ClCompile Include="Solve24\Solve24.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -182,6 +183,7 @@
     <ClInclude Include="LIS\RecursiveLIS.h" />
     <ClInclude Include="Matrix\VectorTest.h" />
     <ClInclude Include="Recursion\Hanoi.h" />
+	<ClInclude Include="Solve24\Solve24.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
