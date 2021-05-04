@@ -5,6 +5,12 @@
 #include "Search/EightQueens.h"
 #include "Search/Sudoku.h"
 #include "Combinatorics/CandyBag.h"
+#include "Search/BoatProblem.h"
+#include "Solve24/Solve24.h"
+#include "Graph/TopologicalSort.h"
+#include "Graph/TravelSalesmanSolver.h"
+#include "Dijkstra/Heap.h"
+#include "Dijkstra/DijkstraSolver.h"
 //#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
@@ -96,7 +102,10 @@ int main(int argc, char* argv[])
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
 
     //LIS(NULL, 5);
-    TestCandyBag();
 
+    //BoatSolver();
 
+    //solveDAG();
+    //TestTravelSalesman();
+    testDijkstra();
 }
