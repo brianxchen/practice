@@ -189,6 +189,7 @@
 	<ClInclude Include="Graph\TopologicalSort.h" />
 	  <ClInclude Include="Graph\TravelSalesmanSolver.h" />
 	  <ClInclude Include="Dijkstra\Heap.h" />
+	  <ClInclude Include="MST\Set.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

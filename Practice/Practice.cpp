@@ -11,6 +11,7 @@
 #include "Graph/TravelSalesmanSolver.h"
 #include "Dijkstra/Heap.h"
 #include "Dijkstra/DijkstraSolver.h"
+#include "MST/MSTSolver.h"
 //#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
@@ -100,12 +101,6 @@ int main(int argc, char* argv[])
 
     //RecursiveLCSubstring("abc", "ab");
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
-
-    //LIS(NULL, 5);
-
-    //BoatSolver();
-
-    //solveDAG();
-    //TestTravelSalesman();
-    testDijkstra();
+    
+    testMSTSolver();
 }
