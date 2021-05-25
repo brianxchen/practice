@@ -163,6 +163,7 @@
 	<ClCompile Include="Graph\TopologicalSort.cpp" />
 	<ClCompile Include="Dijkstra\Heap.cpp" />
 	  <ClCompile Include="StringMatching\KMP.cpp" />
+	  <ClCompile Include="FSA\FSATest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -192,6 +193,8 @@
 	  <ClInclude Include="Dijkstra\Heap.h" />
 	  <ClInclude Include="MST\Set.h" />
 	  <ClInclude Include="StringMatching\KMP.h" />
+	  <ClInclude Include="FSA\testFSA.h" />
+
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

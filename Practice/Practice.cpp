@@ -13,6 +13,7 @@
 #include "Dijkstra/DijkstraSolver.h"
 #include "MST/MSTSolver.h"
 #include "StringMatching/KMP.h"
+#include "FSA/FSATest.h"
 //#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
@@ -104,6 +105,5 @@ int main(int argc, char* argv[])
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
     
     //testMSTSolver();
-
-    testKMP();
+    testFSA();
 }

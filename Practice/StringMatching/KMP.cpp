@@ -42,7 +42,7 @@
 /*
 	This is the helper method that returns a prefixArray that stores the value of
 	the longest prefix that ends at [index].
-	It reutrns an int array (in C++ this is an int pointer)
+	It returns an int array (in C++ this is an int pointer)
 */
 int* calcPrefixLength(string pattern) {
 	int patternLength = pattern.length();
