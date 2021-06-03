@@ -5,7 +5,7 @@ int count24 = 0;
 std::map<string, int> solutions;
 
 bool equals(float a, float b) {
-	return (abs(a - b) < 0.000001);
+	return abs(a - b) < 0.0001;
 }
 
 // Check if map contains key (C++17) to de-dupe

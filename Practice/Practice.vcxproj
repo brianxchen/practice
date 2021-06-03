@@ -162,8 +162,10 @@
     <ClCompile Include="Solve24\Solve24.cpp" />
 	<ClCompile Include="Graph\TopologicalSort.cpp" />
 	<ClCompile Include="Dijkstra\Heap.cpp" />
-	  <ClCompile Include="StringMatching\KMP.cpp" />
-	  <ClCompile Include="FSA\FSATest.cpp" />
+	<ClCompile Include="StringMatching\KMP.cpp" />
+	<ClCompile Include="FSA\FSATest.cpp" />
+	<ClCompile Include="Rectangles/RectangleSolver.cpp" />
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -194,6 +196,7 @@
 	  <ClInclude Include="MST\Set.h" />
 	  <ClInclude Include="StringMatching\KMP.h" />
 	  <ClInclude Include="FSA\testFSA.h" />
+	  <ClInclude Include="Rectangles/RectangleSolver.h" />
 
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
