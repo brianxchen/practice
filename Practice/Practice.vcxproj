@@ -165,7 +165,7 @@
 	<ClCompile Include="StringMatching\KMP.cpp" />
 	<ClCompile Include="FSA\FSATest.cpp" />
 	<ClCompile Include="Rectangles/RectangleSolver.cpp" />
-
+	<ClCompile Include="TreeTraversal/TreeTraversalTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -197,7 +197,7 @@
 	  <ClInclude Include="StringMatching\KMP.h" />
 	  <ClInclude Include="FSA\testFSA.h" />
 	  <ClInclude Include="Rectangles/RectangleSolver.h" />
-
+	  <ClInclude Include="TreeTraversal/TreeTraversalTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
