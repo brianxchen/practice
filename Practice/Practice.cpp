@@ -107,8 +107,8 @@ int main(int argc, char* argv[])
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
     
     //testMSTSolver();
-    //testFSA();
+    testFSA();
     //TestEightQueens();
     //SolveRectangles();
-    testTree();
+    //testTree();
 }
