@@ -166,6 +166,9 @@
 	<ClCompile Include="FSA\FSATest.cpp" />
 	<ClCompile Include="Rectangles/RectangleSolver.cpp" />
 	<ClCompile Include="TreeTraversal/TreeTraversalTest.cpp" />
+	<ClCompile Include="Database/TestDatabase.cpp" />
+	  <ClCompile Include="Database/Table.cpp" />
+	  <ClCompile Include="Database/Index.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -198,6 +201,7 @@
 	  <ClInclude Include="FSA\testFSA.h" />
 	  <ClInclude Include="Rectangles/RectangleSolver.h" />
 	  <ClInclude Include="TreeTraversal/TreeTraversalTest.h" />
+	  <ClInclude Include="Database/TestDatabase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

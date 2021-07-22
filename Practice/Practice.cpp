@@ -16,6 +16,7 @@
 #include "FSA/FSATest.h"
 #include "Rectangles/RectangleSolver.h"
 #include "TreeTraversal/TreeTraversalTest.h"
+#include "Database/TestDatabase.h"
 //#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
@@ -107,8 +108,9 @@ int main(int argc, char* argv[])
     //RecursiveLCSubstring("abcdefgxyz", "mmmbcdefgnnnxyzppp");
     
     //testMSTSolver();
-    testFSA();
+    //testFSA();
     //TestEightQueens();
     //SolveRectangles();
     //testTree();
+    testDatabase();
 }

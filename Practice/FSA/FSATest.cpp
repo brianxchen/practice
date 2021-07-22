@@ -57,7 +57,7 @@ bool MatchHelper(State* currentState, string s, int index, State* endState) {
 	// Recurses through each transition from currentState
 	for (int i = 0; i < currentState->transitions.size(); i++) {
 		bool matched = false;
-		// Episilon transition - moves forward no matter what
+		// Epsilon transition - moves forward no matter what
 		if (currentState->transitions[i]->condition == EPSILON) {
 			// Index is same as before since we aren't moving forward a character in s
 			matched = MatchHelper((State*)(currentState->transitions[i]->destination), s, index, endState);
