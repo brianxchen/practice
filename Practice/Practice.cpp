@@ -17,6 +17,7 @@
 #include "Rectangles/RectangleSolver.h"
 #include "TreeTraversal/TreeTraversalTest.h"
 #include "Database/TestDatabase.h"
+#include "BullsCows/BullsCows.h"
 //#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
@@ -112,5 +113,6 @@ int main(int argc, char* argv[])
     //TestEightQueens();
     //SolveRectangles();
     //testTree();
-    testDatabase();
+    //testDatabase();
+    testBullsCows();
 }

@@ -169,6 +169,8 @@
 	<ClCompile Include="Database/TestDatabase.cpp" />
 	  <ClCompile Include="Database/Table.cpp" />
 	  <ClCompile Include="Database/Index.cpp" />
+	  <ClCompile Include="BullsCows/BullsCows.cpp" />
+
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -202,6 +204,7 @@
 	  <ClInclude Include="Rectangles/RectangleSolver.h" />
 	  <ClInclude Include="TreeTraversal/TreeTraversalTest.h" />
 	  <ClInclude Include="Database/TestDatabase.h" />
+	  <ClInclude Include="BullsCows/BullsCows.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
