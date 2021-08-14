@@ -18,6 +18,7 @@
 #include "TreeTraversal/TreeTraversalTest.h"
 #include "Database/TestDatabase.h"
 #include "BullsCows/BullsCows.h"
+#include "Minimax/Minimax.h"
 //#include "Combinatorics/FencePainting.h"
 /*#include "Knapsack/Knapsack.h"
 #include "MapMemorizer.h"
@@ -114,5 +115,7 @@ int main(int argc, char* argv[])
     //SolveRectangles();
     //testTree();
     //testDatabase();
-    testBullsCows();
+    //testBullsCows();
+
+    testMinimax();
 }

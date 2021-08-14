@@ -170,7 +170,8 @@
 	  <ClCompile Include="Database/Table.cpp" />
 	  <ClCompile Include="Database/Index.cpp" />
 	  <ClCompile Include="BullsCows/BullsCows.cpp" />
-
+    <ClCompile Include="Minimax/Minimax.cpp" />
+	  <ClCompile Include="Minimax/MinimaxNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractMemorizer.h" />
@@ -205,6 +206,9 @@
 	  <ClInclude Include="TreeTraversal/TreeTraversalTest.h" />
 	  <ClInclude Include="Database/TestDatabase.h" />
 	  <ClInclude Include="BullsCows/BullsCows.h" />
+    <ClInclude Include="Minimax/Minimax.h" />
+	  <ClInclude Include="Minimax/MinimaxNode.h" />
+
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
