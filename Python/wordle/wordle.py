@@ -1,5 +1,6 @@
 import random
-
+from collections import defaultdict
+from tqdm import tqdm
 class wordle:
     def __init__(self):
         with open("words.txt") as f:
@@ -11,26 +12,27 @@ class wordle:
 
         self.max_guesses = 15
 
-        print(word)
+        # print(word)
         # word is the correct answer
         self.word = word
         self.guesses_used = 0
         self.possible_words = words_set
 
-    def parse_guess(self, guess):
-        if len(guess) != len(self.word):
+    def parse_guess(self, guess, words_set, word=None):
+        w = word or self.word
+        if len(guess) != len(w):
             return "Invalid length"
-        if guess not in self.words_set:
+        if guess not in words_set:
             return "Invalid guess (not a word)"
         output_code = []
         for i in range(len(guess)):
-            if guess[i] == self.word[i]:
+            if guess[i] == w[i]:
                 output_code.append(0)
-            elif guess[i] in self.word:
+            elif guess[i] in w:
                 output_code.append(1)
             else:
                 output_code.append(2)
-        self.guesses_used += 1
+        # self.guesses_used += 1
         return output_code
 
     def code_to_labelled_word(self, code, word):
@@ -58,14 +60,14 @@ class wordle:
         print("Enter a guess: ")
         while self.guesses_used < self.max_guesses:
             guess = input("")
-            output = self.parse_guess(guess.lower())
+            output = self.parse_guess(guess.lower(), self.words_set)
             print(output)
             if guess.lower() == self.word:
                 print("You win!")
                 return
         print("You lose. The word was: " + self.word)
         
-    def solve(self):
+    def solve_naive(self):
         """
         Solve naively.
         """
@@ -95,10 +97,122 @@ class wordle:
                     new_possible_words.add(word)
             self.possible_words = new_possible_words
 
-            # print(f"Number of possible words: {len(self.possible_words)}")
             # Choose next guess randomly out of the set of possible words
+            possible_outcomes = defaultdict()
+            word_outcomes = defaultdict()
+            for word in self.words_set:
+                # For each possible next guess, calculate all possible outcomes
+                for possible_word in self.possible_words:
+                    outcome = self.parse_guess(possible_word, word)
+                    if outcome not in possible_outcomes:
+                        possible_outcomes[outcome] = 1
+                    else:
+                        possible_outcomes[outcome] += 1
+                
+                # Now check how many of the remaining words fit for each guess
+                for possible_word in self.possible_words:
+                    if outcome not in word_outcomes:
+                        word_outcomes[outcome] = 1
+                    else:
+                        word_outcomes[outcome] += 1
+
             guess = random.choice(list(self.possible_words))
 
+    def solve(self, verbose=True):
+        """
+        Solve using information gain.
+        """
+
+        # Starting guess can be changed
+        guess = "crane"
+        words_set_temp = set(w for w in self.words_set)
+        possible_words_temp = words_set_temp
+        while self.guesses_used < self.max_guesses:
+            if verbose:
+                print(f"Guess {self.guesses_used + 1}: {guess}")
+            # print(f"Best next guess: {best_guess}")
+            outcome = self.parse_guess(guess, words_set_temp)
+            if verbose:
+                print(self.code_to_labelled_word(outcome, guess))
+            if guess == self.word:
+                if verbose:
+                    print(f"Solved in {self.guesses_used + 1} guesses")
+                return
+            
+            new_possible_words = set()
+            for word in possible_words_temp:
+                is_valid = True
+                for i, color in enumerate(outcome):
+                    if color == 0 and word[i] != guess[i]:
+                        is_valid = False
+                        break
+                    elif color == 1 and guess[i] not in word:
+                        is_valid = False
+                        break
+                    elif color == 2 and guess[i] in word:
+                        is_valid = False
+                        break
+                if is_valid and word != guess:
+                    new_possible_words.add(word)
+
+            possible_words_temp = new_possible_words
+            self.guesses_used += 1
+
+            # don't guess the same answer twice
+            words_set_temp.remove(guess)
+
+            if verbose:
+                print(f"Number of possible words: {len(self.possible_words)}")
+
+            # Simulate feedback for all possible remaining words
+            possible_outcomes = defaultdict(int)
+            for word in possible_words_temp:
+                outcome = tuple(self.parse_guess(word, words_set_temp)) # Save outcome as tuple to use as key
+                # print(f"DEBUG {outcome}")
+                possible_outcomes[outcome] += 1  # Count occurrences of each outcome
+
+            best_guess = None
+            best_outcome_division = float('inf')
+
+            for word in possible_words_temp: # tqdm(possible_words_temp):
+                # for each word in the dictionary, calculate the possible outcomes
+                outcome_distribution = defaultdict(int)
+
+                for possible_word in possible_words_temp:
+                    outcome = tuple(self.parse_guess(word, possible_word))  # Simulate outcome
+                    # print(f"outcome for {word} given {possible_word}: {outcome}")
+                    outcome_distribution[outcome] += 1
+                # print(f"outcome_distribution for {word} ={outcome_distribution}")
+                outcome_division = len(outcome_distribution)
+
+                # the ideal guess minimizes the outcome distribution
+                if outcome_division < best_outcome_division:
+                    best_outcome_division = outcome_division
+                    best_guess = word
+
+            # print(f"guesses used: {self.guesses_used}")
+            guess = best_guess
+
+            """
+            if len(self.possible_words) < 10:
+                print(f"Words left: {list(self.possible_words)}")
+            """
+
+    def test(self):
+        """
+        Test average solve length for all words
+        """
+        total = 0
+        num_tests = 100
+        for word in tqdm(self.words[:num_tests]):
+            self.word = word
+            self.guesses_used = 0
+            self.words_set = self.words_set
+            self.possible_words = self.words_set
+            self.solve(verbose=False)
+            total += self.guesses_used
+        print(f"Average guesses: {total/num_tests}")
+
 w = wordle()
-w.solve()
+w.test()
 
