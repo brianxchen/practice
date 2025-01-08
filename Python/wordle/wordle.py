@@ -1,6 +1,7 @@
 import random
 from collections import defaultdict
 from tqdm import tqdm
+import matplotlib.pyplot as plt
 class wordle:
     def __init__(self):
         with open("words.txt") as f:
@@ -185,7 +186,7 @@ class wordle:
                 # print(f"outcome_distribution for {word} ={outcome_distribution}")
                 outcome_division = len(outcome_distribution)
 
-                # the ideal guess minimizes the outcome distribution
+                # the ideal guess minimizes the size of the outcome distribution
                 if outcome_division < best_outcome_division:
                     best_outcome_division = outcome_division
                     best_guess = word
@@ -203,7 +204,8 @@ class wordle:
         Test average solve length for all words
         """
         total = 0
-        num_tests = 100
+        guesses = []
+        num_tests = len(self.words)
         for word in tqdm(self.words[:num_tests]):
             self.word = word
             self.guesses_used = 0
@@ -211,7 +213,10 @@ class wordle:
             self.possible_words = self.words_set
             self.solve(verbose=False)
             total += self.guesses_used
+            guesses.append(self.guesses_used)
         print(f"Average guesses: {total/num_tests}")
+        plt.hist(guesses, bins=range(min(guesses), max(guesses)))
+        plt.show()
 
 w = wordle()
 w.test()
