@@ -21,6 +21,7 @@ class wordle:
 
     def parse_guess(self, guess, words_set, word=None):
         w = word or self.word
+        # print(f"Parsing guess: {guess}")
         if len(guess) != len(w):
             return "Invalid length"
         if guess not in words_set:
@@ -49,11 +50,11 @@ class wordle:
         for i in range(len(code)):
             char = word[i]
             if code[i] == 0:
-                output = output + ' [' + char + ']'
+                output += f"[{char}]"
             elif code[i] == 1:
-                output = output + ' (' + char + ')'
+                output += f"({char})"
             else:
-                output = output + ' <' + char + '>'
+                output += f"<{char}>"
         return output
 
     def play(self):
@@ -160,7 +161,9 @@ class wordle:
             self.guesses_used += 1
 
             # don't guess the same answer twice
-            words_set_temp.remove(guess)
+            # TODO in theory the optimal solution should not guess the same word twice anyways
+            # so this shouldn't be necessary
+            # words_set_temp.remove(guess)
 
             if verbose:
                 print(f"Number of possible words: {len(self.possible_words)}")
@@ -173,24 +176,24 @@ class wordle:
                 possible_outcomes[outcome] += 1  # Count occurrences of each outcome
 
             best_guess = None
-            best_outcome_division = float('inf')
+            best_outcome_division = -1 # float('inf')
 
             for word in possible_words_temp: # tqdm(possible_words_temp):
                 # for each word in the dictionary, calculate the possible outcomes
                 outcome_distribution = defaultdict(int)
 
                 for possible_word in possible_words_temp:
-                    outcome = tuple(self.parse_guess(word, possible_word))  # Simulate outcome
+                    outcome = tuple(self.parse_guess(word, possible_words_temp, possible_word))  # Simulate outcome
                     # print(f"outcome for {word} given {possible_word}: {outcome}")
                     outcome_distribution[outcome] += 1
                 # print(f"outcome_distribution for {word} ={outcome_distribution}")
                 outcome_division = len(outcome_distribution)
 
-                # the ideal guess minimizes the size of the outcome distribution
-                if outcome_division < best_outcome_division:
+                # the ideal guess maximizes the size of the outcome distribution
+                if outcome_division > best_outcome_division:
                     best_outcome_division = outcome_division
                     best_guess = word
-
+            self.possible_words = possible_words_temp
             # print(f"guesses used: {self.guesses_used}")
             guess = best_guess
 
@@ -205,7 +208,7 @@ class wordle:
         """
         total = 0
         guesses = []
-        num_tests = len(self.words)
+        num_tests = 1000 # len(self.words)
         for word in tqdm(self.words[:num_tests]):
             self.word = word
             self.guesses_used = 0
