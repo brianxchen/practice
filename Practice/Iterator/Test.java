@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 // Iterator interface
 interface Iterator<E> {
     // Returns true if the iteration has more elements. 
@@ -27,6 +29,48 @@ class StringArrayIterator implements Iterator<String> {
         return strs[index++];
     }
 }
+class Node{
+    public int val;
+    public Node left;
+    public Node right;
+    public Node(int val, Node left, Node right){
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+    public Node(int val){
+        this.val = val;
+    }
+}
+class BSTIterator implements Iterator<Node>{
+    private Stack<Node> s = new Stack<>();    
+
+    public BSTIterator(Node root) {
+        push_left(root);
+    }
+
+    private void push_left(Node n){
+        while(n != null){
+            s.push(n);
+            n = n.left;
+        }
+    }
+
+    public boolean hasNext() {
+        return !s.isEmpty();
+    }
+
+    public Node next() {
+        if (!hasNext()) {
+            throw new java.util.NoSuchElementException();
+        }
+        Node next = s.pop();
+        if(next.right != null){
+            push_left(next.right);
+        }
+        return next;
+    }
+}
 
 // Usage:
 public class Test {
@@ -52,6 +96,29 @@ public class Test {
         Iterator<Integer> fibonacciIterator = new FibonacciIterator(maxFibonacci);
         while (fibonacciIterator.hasNext()) {
             System.out.println(fibonacciIterator.next());
+        }
+
+        System.out.println("Testing BST Iterator");
+        Node A = new Node(8);
+        Node B = new Node(3);
+        Node C = new Node(10);
+        Node D = new Node(1);
+        Node E = new Node(6);
+        Node F = new Node(14);
+        Node G = new Node(4);
+        Node H = new Node(7);
+        Node I = new Node(13);
+        A.left = B;
+        A.right = C;
+        B.left = D;
+        B.right = E;
+        C.right = F;
+        E.left = G;
+        E.right = H;
+        F.left = I;
+        Iterator<Node> BIterator = new BSTIterator(A);
+        while(BIterator.hasNext()){
+            System.out.println(BIterator.next().val);
         }
     }
 }
